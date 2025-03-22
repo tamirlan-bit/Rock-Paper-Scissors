@@ -1,8 +1,9 @@
 console.log("JS works");
 
+const resultsText = document.querySelector(".results");  
 const playerScoreDis = document.querySelector(".player-score");  
 const pcScoreDis = document.querySelector(".pc-score"); 
-const uSelection = document.querySelector(".u-selection");  
+const playerSelection = document.querySelector(".player-selection");  
 const pcSelection = document.querySelector(".pc-selection");  
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
@@ -27,7 +28,7 @@ function selectWeapon(event) {
     console.log('Selected weapon: ',playerWeapon);
     let pcWeapon = getRandomWeapon(); 
     console.log('PC Selected weapon: ',pcWeapon);
-    uSelection.innerHTML = `<div class="${playerWeapon}"></div>`;
+    playerSelection.innerHTML = `<div class="${playerWeapon}"></div>`;
     pcSelection.innerHTML = `<div class="${pcWeapon}"></div>`;
     whoWon(playerWeapon,pcWeapon);
     checkGame();
@@ -44,29 +45,33 @@ function whoWon(playerWeapon, pcWeapon) {
     if (playerWeapon === pcWeapon) {
         console.log('draw');
         console.log('PC score: ',pcScore,'Player score: ',playerScore);
+        resultsText.textContent = "Draw";
         return 'draw';
     }
 
     if (rules[playerWeapon].beats === pcWeapon) {
         console.log('You Won');
         playerScore++;
-        //playerScoreDis.innerHTML += `${playerScore}`;
+        resultsText.textContent = "You won";
+        playerScoreDis.textContent = `Score: ${playerScore}/5`;
         console.log('PC score: ',pcScore,'Player score: ',playerScore);
         return 'win';
     } else {
         console.log('You Lose PC score: ',pcScore);
         pcScore++;
+        resultsText.textContent = "You lose";
+        pcScoreDis.textContent = `Score: ${pcScore}/5`;
         console.log('PC score: ',pcScore,'Player score: ',playerScore);
         return 'lose';
     }
 }
 
 function checkGame () {
-    if ( pcScore >= 3 ){        
+    if ( pcScore >= 5 ){        
         alert(`You Lose! Player score: ${playerScore} PC score: ${pcScore}`);
         resetScore();
     }
-    else if ( playerScore >= 3){
+    else if ( playerScore >= 5){
         alert(`You Won! Player score: ${playerScore} PC score: ${pcScore}`); 
         resetScore();
     }
@@ -76,6 +81,8 @@ resetScore = () => {
     console.clear();
     pcScore = 0;
     playerScore = 0;
+    resultsText.textContent = "Results";
+
 }
 
 

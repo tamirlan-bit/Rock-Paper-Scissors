@@ -48,11 +48,11 @@ header h1 {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.u-move, .results {
+.player-move, .results {
     text-align: center;
 }
 
-.u-selection, .pc-selection {
+.player-selection, .pc-selection {
     margin: 10px 0;
     width: 120px;
     height: 120px;
@@ -66,7 +66,7 @@ header h1 {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.u-selection:hover, .pc-selection:hover {
+.player-selection:hover, .pc-selection:hover {
     transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(2, 136, 209, 0.5);
 }
@@ -76,6 +76,12 @@ h2 {
     color: #333;
     text-align: center;
     margin-top: 20px;
+}
+
+.results {
+    font-size: 1.4rem;
+    color: #333;
+    text-align: center;
 }
 
 .weapons {
@@ -105,7 +111,7 @@ h2 {
 }
 
 .rock {
-    background-color: #ffb74d;
+    background-color: #64b4e2;
     background-image: url('images/rock.svg');
     background-size: contain;
     background-repeat: no-repeat;
@@ -113,7 +119,7 @@ h2 {
 }
 
 .paper {
-    background-color: #4db6ac;
+    background-color: #578acc;
     background-image: url('images/paper.svg');
     background-size: contain;
     background-repeat: no-repeat;
@@ -121,7 +127,7 @@ h2 {
 }
 
 .sci {
-    background-color: #9575cd;
+    background-color: #7e8ddf;
     background-image: url('images/sci.svg');
     background-size: contain;
     background-repeat: no-repeat;
