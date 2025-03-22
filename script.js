@@ -45,6 +45,8 @@ function whoWon(playerWeapon, pcWeapon) {
     if (playerWeapon === pcWeapon) {
         console.log('draw');
         console.log('PC score: ',pcScore,'Player score: ',playerScore);
+        playerSelection.innerHTML = `<div class="${playerWeapon}" style="background-color:rgb(231, 205, 117);"></div>`;
+        pcSelection.innerHTML = `<div class="${pcWeapon}" style="background-color:rgb(231, 205, 117);"></div>`;
         resultsText.textContent = "Draw";
         return 'draw';
     }
@@ -52,6 +54,8 @@ function whoWon(playerWeapon, pcWeapon) {
     if (rules[playerWeapon].beats === pcWeapon) {
         console.log('You Won');
         playerScore++;
+        playerSelection.innerHTML = `<div class="${playerWeapon}" style="background-color:rgb(85, 196, 131);"></div>`;
+        pcSelection.innerHTML = `<div class="${pcWeapon}" style="background-color:rgb(236, 120, 120);"></div>`;
         resultsText.textContent = "You won";
         playerScoreDis.textContent = `Score: ${playerScore}/5`;
         console.log('PC score: ',pcScore,'Player score: ',playerScore);
@@ -59,6 +63,8 @@ function whoWon(playerWeapon, pcWeapon) {
     } else {
         console.log('You Lose PC score: ',pcScore);
         pcScore++;
+        playerSelection.innerHTML = `<div class="${playerWeapon}" style="background-color:rgb(236, 120, 120);"></div>`;
+        pcSelection.innerHTML = `<div class="${pcWeapon}" style="background-color:rgb(85, 196, 131);"></div>`;
         resultsText.textContent = "You lose";
         pcScoreDis.textContent = `Score: ${pcScore}/5`;
         console.log('PC score: ',pcScore,'Player score: ',playerScore);
@@ -68,11 +74,11 @@ function whoWon(playerWeapon, pcWeapon) {
 
 function checkGame () {
     if ( pcScore >= 5 ){        
-        alert(`You Lose! Player score: ${playerScore} PC score: ${pcScore}`);
+        alert(`You Lose! Player score: ${playerScore} - Computer score: ${pcScore}`);
         resetScore();
     }
     else if ( playerScore >= 5){
-        alert(`You Won! Player score: ${playerScore} PC score: ${pcScore}`); 
+        alert(`You Won! Player score: ${playerScore} - Computer score: ${pcScore}`); 
         resetScore();
     }
 }

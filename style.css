@@ -28,8 +28,7 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    font-size: 1.8rem;
+header h1 {    
     color: white;
     text-shadow: none;
     margin: 0;
@@ -48,7 +47,7 @@ header h1 {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.player-move, .results {
+.player-move,.computer-move, .results {
     text-align: center;
 }
 
@@ -58,17 +57,11 @@ header h1 {
     height: 120px;
     border-radius: 20px;
     background-color: #81d4fa;
-    border: 3px solid #0288d1;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.player-selection:hover, .pc-selection:hover {
-    transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(2, 136, 209, 0.5);
 }
 
 h2 {
@@ -104,7 +97,7 @@ h2 {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.rock:hover, .paper:hover, .sci:hover {
+.weapons button:hover{
     transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     border: 3px solid #0288d1;
@@ -132,4 +125,32 @@ h2 {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+
+.game-result {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#winner {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#play-again {
+    padding: 15px 30px;
+    background-color: #0288d1;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#play-again:hover {
+    background-color: #0277bd;
 }
