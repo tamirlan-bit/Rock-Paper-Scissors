@@ -126,31 +126,3 @@ h2 {
     background-repeat: no-repeat;
     background-position: center;
 }
-
-
-.game-result {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#winner {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-#play-again {
-    padding: 15px 30px;
-    background-color: #0288d1;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#play-again:hover {
-    background-color: #0277bd;
-}
